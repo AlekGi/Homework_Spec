@@ -13,7 +13,7 @@ def add():
             Note.Note.set_id(note)
     array.append(note)
     operation.write_file(array, 'a')
-    print('Заметка успешно добавлена!')
+    print('\033[32mЗаметка успешно добавлена!\033[39m')
 
 
 def show(text):
@@ -48,10 +48,10 @@ def id_edit_del_show(text):
                 Note.Note.set_title(notes, note.get_title())
                 Note.Note.set_body(notes, note.get_body())
                 Note.Note.set_date(notes)
-                print('Заметка успешно изменена!')
+                print('\033[32mЗаметка успешно изменена!\033[39m')
             if text == 'del':
                 array.remove(notes)
-                print('Заметка удалена')
+                print('\033[31mЗаметка удалена\033[39m')
             if text == 'show':
                 print(Note.Note.map_note(notes))
     if logic == True:
